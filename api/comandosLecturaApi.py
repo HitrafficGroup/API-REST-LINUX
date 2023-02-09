@@ -206,8 +206,7 @@ def hitrafficGetRegistrosControlador(ip,mac, pagina):
     """ Obtiene los registros de errores del controlador """
 
     try:
-        output = run(comandoBaseRead+str(ip)+" --leer_registro_errores " +str(pagina), capture_output=True, timeout=10).stdout
-        
+        output = run(args=['wine',comandoBaseRead,str(ip),'--leer_registro_errores',str(pagina)],capture_output=True, timeout=20).stdout
     except:
         raise Exception('Error ejecutando comando leer registro errores')
 
