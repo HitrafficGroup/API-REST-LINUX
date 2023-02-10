@@ -6,7 +6,7 @@ comandoBaseWrite="./ejecutable_comandos_api/Windows_winsock.exe"
 def hitrafficSetTimeControlador(ip, time_zone,data):
     """ Escribe la hora de la PC en el controlador"""
     try:
-        run(args=['wine',comandoBaseWrite,str(ip),'--sincronizar_hora_fecha'],capture_output=True, timeout=20).stdout
+        run(args=['wine',comandoBaseWrite,str(ip),'--sincronizar_hora_fecha',str(time_zone)],capture_output=True, timeout=20).stdout
     except:
         raise Exception('Error ejecutando comando setear hora')
     data = convertData.convertToDictHoraControlador(ip,time_zone)
@@ -62,7 +62,7 @@ def hitrafficSetPlanesControlador(ip,num_plan,fase1,tiempo1,fase2,tiempo2,fase3,
 
     try:
         #output = run("""{} {} --escribir_plan {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {}""".format(comandoBaseWrite,str(ip),num_plan,fase1,tiempo1,fase2,tiempo2,fase3,tiempo3,fase4,tiempo4,fase5,tiempo5,fase6,tiempo6,fase7,tiempo7,fase8,tiempo8,fase9,tiempo9,fase10,tiempo10,fase11,tiempo11,fase12,tiempo12), capture_output=True, timeout=30).stdout
-        run(args=['wine',comandoBaseWrite,str(ip),'--escribir_fases',num_plan,fase1,tiempo1,fase2,tiempo2,fase3,tiempo3,fase4,tiempo4,fase5,tiempo5,fase6,tiempo6,fase7,tiempo7,fase8,tiempo8,fase9,tiempo9,fase10,tiempo10,fase11,tiempo11,fase12,tiempo12],capture_output=True, timeout=20).stdout
+        run(args=['wine',comandoBaseWrite,str(ip),'--escribir_plan',str(num_plan),fase1,tiempo1,fase2,tiempo2,fase3,tiempo3,fase4,tiempo4,fase5,tiempo5,fase6,tiempo6,fase7,tiempo7,fase8,tiempo8,fase9,tiempo9,fase10,tiempo10,fase11,tiempo11,fase12,tiempo12],capture_output=True, timeout=40).stdout
    
     except:
         raise Exception('Error ejecutando comando escribir planes')
@@ -102,9 +102,11 @@ def hitrafficSetHorariosControlador(ip,num_horario,hora1,minuto1,mod1,desfase1,h
     """ Escribe la configuracion de los horarios en el controlador """
     
     try:
-        # output = run("""{} {} --escribir_horario {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {}""".format(comandoBaseWrite,str(ip),num_horario,hora1,minuto1,mod1,desfase1,hora2,minuto2,mod2,desfase2,hora3,minuto3,mod3,desfase3,hora4,minuto4,mod4,desfase4,hora5,minuto5,mod5,desfase5,hora6,minuto6,mod6,desfase6,hora7,minuto7,mod7,desfase7,hora8,minuto8,mod8,desfase8,hora9,minuto9,mod9,desfase9,hora10,minuto10,mod10,desfase10,hora11,minuto11,mod11,desfase11,hora12,minuto12,mod12,desfase12,hora13,minuto13,mod13,desfase13,hora14,minuto14,mod14,desfase14,hora15,minuto15,mod15,desfase15,hora16,minuto16,mod16,desfase16), capture_output=True, timeout=10).stdout
+        output = """{} {} --escribir_horario {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 
+        {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} 
+        {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {}""".format(comandoBaseWrite,str(ip),str(num_horario),hora1,minuto1,mod1,desfase1,hora2,minuto2,mod2,desfase2,hora3,minuto3,mod3,desfase3,hora4,minuto4,mod4,desfase4,hora5,minuto5,mod5,desfase5,hora6,minuto6,mod6,desfase6,hora7,minuto7,mod7,desfase7,hora8,minuto8,mod8,desfase8,hora9,minuto9,mod9,desfase9,hora10,minuto10,mod10,desfase10,hora11,minuto11,mod11,desfase11,hora12,minuto12,mod12,desfase12,hora13,minuto13,mod13,desfase13,hora14,minuto14,mod14,desfase14,hora15,minuto15,mod15,desfase15,hora16,minuto16,mod16,desfase16)
+        print(output)
         run(args=['wine',comandoBaseWrite,str(ip),'--escribir_horario',num_horario,hora1,minuto1,mod1,desfase1,hora2,minuto2,mod2,desfase2,hora3,minuto3,mod3,desfase3,hora4,minuto4,mod4,desfase4,hora5,minuto5,mod5,desfase5,hora6,minuto6,mod6,desfase6,hora7,minuto7,mod7,desfase7,hora8,minuto8,mod8,desfase8,hora9,minuto9,mod9,desfase9,hora10,minuto10,mod10,desfase10,hora11,minuto11,mod11,desfase11,hora12,minuto12,mod12,desfase12,hora13,minuto13,mod13,desfase13,hora14,minuto14,mod14,desfase14,hora15,minuto15,mod15,desfase15,hora16,minuto16,mod16,desfase16],capture_output=True, timeout=20).stdout
-
     except:
         raise Exception('Error ejecutando comando escribir horarios')
 
