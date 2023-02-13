@@ -47,6 +47,7 @@ class restGetPlanesControlador(APIView):
         mac=request.GET.get('mac')
         ip=request.GET.get('ip')
         result =  hitrafficGetPlanesControlador(ip,mac)
+        print(result)
         return Response(result,status=status.HTTP_200_OK)
 
 

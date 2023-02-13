@@ -66,7 +66,6 @@ def hitrafficSetPlanesControlador(ip,num_plan,fase1,tiempo1,fase2,tiempo2,fase3,
    
     except:
         raise Exception('Error ejecutando comando escribir planes')
-
     #Conversion de los datos
     data = convertData.convertToDictPlanes(ip,num_plan,fase1,tiempo1,fase2,tiempo2,fase3,tiempo3,fase4,tiempo4,fase5,tiempo5,fase6,tiempo6,fase7,tiempo7,fase8,tiempo8,fase9,tiempo9,fase10,tiempo10,fase11,tiempo11,fase12,tiempo12)
     context = {
