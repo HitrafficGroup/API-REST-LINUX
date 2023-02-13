@@ -85,11 +85,12 @@ def hitrafficGetPlanesControlador(ip,mac):
     """ Obtiene la configuracion de todos los 16 planes del controlador, independientemente del valor del selector """
     try:
         output = run(args=['wine',comandoBaseRead,str(ip),'--leer_planes'],capture_output=True, timeout=160).stdout
+
     except:
         raise Exception('Error ejecutando comando leer planes')
-
     try:
         jsonResponse = json.loads(output)
+        print(jsonResponse)
     except:
         raise Exception('Error cargando todo a json')
 
