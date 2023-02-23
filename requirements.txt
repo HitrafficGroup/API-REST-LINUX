@@ -1,0 +1,6 @@
+pip install Django
+pip install django-cors-headers
+pip install djangorestframework
+pip install markdown       
+pip install django-filter  
+pip install gunicorn

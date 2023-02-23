@@ -2,7 +2,9 @@
 from subprocess import run
 import json
 
-
+#criss zapate v
+#eve mineros
+#elfonsy fonseca
 pruebas="./ejecutable_comandos_api/Windows_winsock.exe"
 comandoBaseRead="./ejecutable_comandos_api/Windows_winsock.exe"
 def hitrafficListarIps():
