@@ -1,6 +1,6 @@
-pip install Django
-pip install django-cors-headers
-pip install djangorestframework
-pip install markdown       
-pip install django-filter  
-pip install gunicorn
+Django=3.2.18
+django-cors-headers = 3.10.1
+djangorestframework=3.14.0
+markdown = 3.4.1      
+django-filter = 22.1
+gunicorn = 20.1.0
